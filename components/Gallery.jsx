@@ -13,7 +13,7 @@ export default function Gallery() {
     <section id="gallery" className="relative py-24 md:py-36 border-t border-white/5">
       <div className="max-w-[1400px] mx-auto px-5 md:px-10">
         <div className="mb-14">
-          <SectionLabel n="04">Gallery</SectionLabel>
+          <SectionLabel n="05">Gallery</SectionLabel>
           <Reveal>
             <h2 className="font-racing text-6xl md:text-8xl leading-[0.85]">
               <span className="grad-heat">SHOT</span> <span className="stroke-text">ON SIGHT</span>

@@ -18,7 +18,7 @@ export default function RaceWars() {
       <div className="relative max-w-[1400px] mx-auto px-5 md:px-10">
         <div className="text-center max-w-3xl mx-auto mb-14">
           <div className="flex justify-center">
-            <SectionLabel n="05">Race Weekend</SectionLabel>
+            <SectionLabel n="06">Race Weekend</SectionLabel>
           </div>
           <Reveal>
             <h2 className="font-racing text-6xl md:text-8xl leading-[0.85]">

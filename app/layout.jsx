@@ -1,27 +1,11 @@
 import "./globals.css";
-import localFont from "next/font/local";
-import { Barlow_Semi_Condensed, Racing_Sans_One } from "next/font/google";
+import { Titillium_Web } from "next/font/google";
 
-// Real Serpentine Bold — the NFS: Most Wanted "NEED FOR SPEED" display face.
-const display = localFont({
-  src: "./fonts/serpentine-bold.ttf",
-  variable: "--font-display",
-  display: "swap",
-  weight: "700",
-});
-
-// Racing Sans One — the "best racing font" pick for big statement words.
-const racing = Racing_Sans_One({
-  weight: "400",
+// Titillium Web — the Formula 1 typeface. One family, used across the whole site.
+const titillium = Titillium_Web({
+  weight: ["200", "300", "400", "600", "700", "900"],
   subsets: ["latin"],
-  variable: "--font-racing",
-  display: "swap",
-});
-
-const body = Barlow_Semi_Condensed({
-  weight: ["400", "500", "600", "700", "800"],
-  subsets: ["latin"],
-  variable: "--font-body",
+  variable: "--font-title",
   display: "swap",
 });
 
@@ -33,7 +17,7 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en" className={`${display.variable} ${racing.variable} ${body.variable}`}>
+    <html lang="en" className={titillium.variable}>
       <body className="bg-heat grain">{children}</body>
     </html>
   );

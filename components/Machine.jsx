@@ -12,7 +12,7 @@ export default function Machine() {
       <div className="max-w-[1400px] mx-auto px-5 md:px-10">
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-14">
           <div>
-            <SectionLabel n="02">The Machine</SectionLabel>
+            <SectionLabel n="03">The Machine</SectionLabel>
             <Reveal>
               <h2 className="font-racing text-6xl md:text-8xl leading-[0.85]">
                 <span className="stroke-text">THE</span> <span className="grad-heat">SUPERB</span>

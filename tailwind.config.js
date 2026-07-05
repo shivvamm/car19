@@ -7,19 +7,19 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        // carbon-fiber base
-        ink: "#08090b",
-        night: "#0e1013",
-        panel: "#14171c",
-        // racing-red accent (keeps the old "magenta/hotpink" class names)
-        magenta: "#ff3b30",
-        hotpink: "#ff5a4e",
-        // brushed steel / silver (keeps the old "cyan/electric" class names)
-        cyan: "#aab6c2",
-        electric: "#dfe5ec",
+        // F1 premium base — rich blacks
+        ink: "#0a0a0c",
+        night: "#101013",
+        panel: "#16161a",
+        // F1 red (keeps the old "magenta/hotpink" class names)
+        magenta: "#e10600",
+        hotpink: "#ff2b1f",
+        // cool steel / silver (keeps the old "cyan/electric" class names)
+        cyan: "#b9c2cc",
+        electric: "#e6ebf0",
         // titanium warm accent
         gold: "#c9a15a",
-        haze: "#2b3037",
+        haze: "#26272c",
       },
       fontFamily: {
         display: ["var(--font-display)", "sans-serif"],
@@ -27,8 +27,8 @@ module.exports = {
         body: ["var(--font-body)", "sans-serif"],
       },
       boxShadow: {
-        "glow-pink": "0 0 26px rgba(255,59,48,0.5), 0 0 60px rgba(255,59,48,0.22)",
-        "glow-cyan": "0 0 22px rgba(170,182,194,0.35), 0 0 50px rgba(170,182,194,0.15)",
+        "glow-pink": "0 0 24px rgba(225,6,0,0.45), 0 0 56px rgba(225,6,0,0.2)",
+        "glow-cyan": "0 0 20px rgba(185,194,204,0.28), 0 0 46px rgba(185,194,204,0.12)",
       },
     },
   },

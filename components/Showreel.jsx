@@ -58,7 +58,7 @@ export default function Showreel() {
       <div className="max-w-[1400px] mx-auto px-5 md:px-10">
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-12">
           <div>
-            <SectionLabel n="03">Showreel</SectionLabel>
+            <SectionLabel n="04">Showreel</SectionLabel>
             <Reveal>
               <h2 className="font-racing text-6xl md:text-8xl leading-[0.85]">
                 <span className="neon-pink">FULL</span> <span className="grad-heat">SEND</span>
