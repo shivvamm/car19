@@ -1,6 +1,5 @@
 "use client";
 
-import Image from "next/image";
 import { motion } from "framer-motion";
 import Icon from "./ui/Icon";
 
@@ -16,20 +15,22 @@ const fade = {
 export default function Hero() {
   return (
     <section id="top" className="relative min-h-[100svh] w-full overflow-hidden">
-      {/* landscape car photo — slow cinematic push-in */}
+      {/* street-run video background — slow cinematic push-in */}
       <motion.div
         className="absolute inset-0"
         initial={{ scale: 1.14 }}
         animate={{ scale: 1 }}
         transition={{ duration: 2.4, ease: [0.2, 0.7, 0.2, 1] }}
       >
-        <Image
-          src="/media/studio-side.jpg"
-          alt="SPUNKY #19 — black Škoda Superb in the build bay"
-          fill
-          priority
-          sizes="100vw"
-          className="object-cover object-[62%_center]"
+        <video
+          className="w-full h-full object-cover object-[60%_center]"
+          src="/media/clip-night.mp4"
+          poster="/media/poster-night.jpg"
+          autoPlay
+          muted
+          loop
+          playsInline
+          preload="auto"
         />
       </motion.div>
 
