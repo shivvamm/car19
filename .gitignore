@@ -1,0 +1,19 @@
+# dependencies / build
+node_modules
+.next
+out
+
+# os / logs
+.DS_Store
+*.log
+
+# local tooling / session memory
+.remember
+
+# raw 4K source media — too large for GitHub (use public/media web versions)
+/CLIPS/
+/PICS/
+
+# commercial font (Serpentine) — do NOT redistribute publicly. Keep local.
+/font/
+/app/fonts/serpentine-bold.ttf

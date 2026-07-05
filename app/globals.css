@@ -1,0 +1,191 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --font-display: "Serpentine", "Arial Narrow", system-ui, sans-serif;
+  --font-body: "Barlow Semi Condensed", system-ui, sans-serif;
+  --pink: #ff3b30;   /* racing red accent */
+  --cyan: #aab6c2;   /* brushed steel */
+  --gold: #c9a15a;   /* titanium */
+}
+
+/* Serpentine reads as the NFS:MW "NEED FOR SPEED" face when it leans forward.
+   Give every display heading that signature oblique + tight tracking. */
+@layer utilities {
+  .font-display {
+    font-style: italic;
+    letter-spacing: -0.01em;
+  }
+}
+/* opt-out for cases where an upright cut reads better */
+.no-tilt { font-style: normal; }
+
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  background: #08090b;
+  color: #e6e9ee;
+  font-family: var(--font-body);
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* --- Carbon-fiber twill weave + graphite vignette + red heat pool --- */
+.bg-heat {
+  background-color: #0a0b0e;
+  background-image:
+    /* soft graphite lighting */
+    radial-gradient(1100px 620px at 12% -10%, rgba(60,66,74,0.55), transparent 60%),
+    radial-gradient(1000px 700px at 100% 0%, rgba(255,59,48,0.10), transparent 55%),
+    radial-gradient(900px 820px at 50% 120%, rgba(120,130,142,0.10), transparent 60%),
+    /* 2x2 carbon-fiber twill weave */
+    linear-gradient(45deg, #101216 25%, transparent 25%, transparent 75%, #101216 75%),
+    linear-gradient(45deg, #101216 25%, transparent 25%, transparent 75%, #101216 75%),
+    linear-gradient(135deg, #0d0f12 25%, transparent 25%, transparent 75%, #0d0f12 75%),
+    linear-gradient(135deg, #0d0f12 25%, transparent 25%, transparent 75%, #0d0f12 75%);
+  background-size: auto, auto, auto, 12px 12px, 12px 12px, 12px 12px, 12px 12px;
+  background-position: 0 0, 0 0, 0 0, 0 0, 6px 6px, 6px 0, 0 6px;
+}
+
+/* Reusable carbon panel surface (subtle weave) */
+.carbon {
+  background-color: #101216;
+  background-image:
+    linear-gradient(45deg, rgba(255,255,255,0.028) 25%, transparent 25%, transparent 75%, rgba(255,255,255,0.028) 75%),
+    linear-gradient(135deg, rgba(0,0,0,0.35) 25%, transparent 25%, transparent 75%, rgba(0,0,0,0.35) 75%);
+  background-size: 10px 10px, 10px 10px;
+  background-position: 0 0, 5px 5px;
+}
+
+/* Fine grain overlay */
+.grain::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 60;
+  opacity: 0.07;
+  mix-blend-mode: overlay;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+/* Scanline / HUD grid */
+.hud-grid {
+  background-image:
+    linear-gradient(rgba(170,182,194,0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(170,182,194,0.05) 1px, transparent 1px);
+  background-size: 46px 46px;
+  mask-image: radial-gradient(ellipse 80% 70% at 50% 45%, #000 40%, transparent 100%);
+}
+
+/* Red heat accent text (kept the .neon-pink name) */
+.neon-pink { color: #fff; text-shadow: 0 0 10px rgba(255,59,48,.85), 0 0 24px rgba(255,59,48,.5), 0 0 52px rgba(255,59,48,.3); }
+/* Brushed-steel accent text (kept the .neon-cyan name) */
+.neon-cyan {
+  background: linear-gradient(180deg, #ffffff 0%, #cdd4dc 45%, #8b929b 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  text-shadow: none;
+  filter: drop-shadow(0 1px 0 rgba(0,0,0,0.5));
+}
+
+/* Outlined display type (stroke) — silver */
+.stroke-text {
+  color: transparent;
+  -webkit-text-stroke: 2px rgba(200,208,216,0.55);
+}
+
+/* Brushed titanium/steel headline gradient */
+.grad-heat {
+  background: linear-gradient(120deg, #ffffff 0%, #c3cad2 32%, #7d848d 60%, #c9a15a 130%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* Section label chip */
+.chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: var(--font-body);
+  font-weight: 700;
+  letter-spacing: 0.35em;
+  text-transform: uppercase;
+  font-size: 0.72rem;
+  color: #c3cad2;
+}
+.chip::before {
+  content: "";
+  width: 26px; height: 2px;
+  background: linear-gradient(90deg, #ff3b30, transparent);
+}
+
+/* Angular clip (racing wedge) */
+.wedge { clip-path: polygon(0 0, 100% 0, 100% 100%, 6% 100%); }
+.wedge-r { clip-path: polygon(0 0, 94% 0, 100% 100%, 0 100%); }
+
+/* Neon button */
+.btn-heat {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.9rem 1.8rem;
+  font-family: var(--font-body);
+  font-weight: 800;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: #fff;
+  background: linear-gradient(100deg, #e0281f, #ff3b30);
+  clip-path: polygon(0 0, 100% 0, 100% 70%, 92% 100%, 0 100%);
+  box-shadow: 0 0 22px rgba(255,59,48,.45);
+  transition: transform .2s ease, box-shadow .2s ease;
+}
+.btn-heat:hover { transform: translateY(-2px); box-shadow: 0 0 38px rgba(255,59,48,.7); }
+
+.btn-ghost {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.9rem 1.7rem;
+  font-family: var(--font-body);
+  font-weight: 800;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: #dfe5ec;
+  border: 1.5px solid rgba(170,182,194,0.45);
+  clip-path: polygon(8% 0, 100% 0, 100% 100%, 0 100%, 0 30%);
+  transition: all .2s ease;
+}
+.btn-ghost:hover { border-color: #cdd4dc; box-shadow: inset 0 0 30px rgba(170,182,194,.12), 0 0 22px rgba(170,182,194,.2); }
+
+/* Marquee */
+@keyframes marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+.animate-marquee { animation: marquee 26s linear infinite; }
+
+/* Track-map comet: a glowing segment races the circuit */
+@keyframes comet { to { stroke-dashoffset: -1600; } }
+.track-comet {
+  stroke-dasharray: 90 1500;
+  animation: comet 7s linear infinite;
+}
+@keyframes trackdraw { from { stroke-dashoffset: 1600; } to { stroke-dashoffset: 0; } }
+
+/* Slow pulse for scan line */
+@keyframes sweep { 0%,100% { opacity:.25 } 50% { opacity:.8 } }
+
+/* Card hover lift */
+.tile { transition: transform .35s cubic-bezier(.2,.7,.2,1), box-shadow .35s ease; }
+.tile:hover { transform: translateY(-6px); }
+
+::selection { background: #ff3b30; color: #fff; }
+
+/* Scrollbar */
+::-webkit-scrollbar { width: 10px; }
+::-webkit-scrollbar-track { background: #08090b; }
+::-webkit-scrollbar-thumb { background: linear-gradient(#ff3b30,#2b3037); border-radius: 20px; }
