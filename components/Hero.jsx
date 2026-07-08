@@ -14,9 +14,9 @@ const fade = {
 
 const meta = [
   "Buddh Int'l Circuit",
-  "Škoda Superb · Stage 1",
-  "320 BHP",
-  "S-Class",
+  "Škoda Superb · Stage 2",
+  "260 BHP",
+  "FMSCI",
 ];
 
 export default function Hero() {
@@ -115,7 +115,7 @@ export default function Hero() {
         className="absolute bottom-8 right-6 md:right-16 z-10 flex items-center gap-3 text-white/45 font-body uppercase tracking-[0.28em] text-[10px]"
       >
         <Icon name="pin" className="w-4 h-4 text-magenta" strokeWidth={1.6} />
-        Greater Noida, India
+        Delhi NCR, India
       </motion.div>
     </section>
   );

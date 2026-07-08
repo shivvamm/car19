@@ -18,12 +18,12 @@ export default function RaceWars() {
       <div className="relative max-w-[1400px] mx-auto px-5 md:px-10">
         <div className="text-center max-w-3xl mx-auto mb-14">
           <div className="flex justify-center">
-            <SectionLabel n="06">Race Weekend</SectionLabel>
+            <SectionLabel n="08">Race Weekend</SectionLabel>
           </div>
           <Reveal>
             <h2 className="font-racing text-6xl md:text-8xl leading-[0.85]">
-              <span className="neon-pink">RACE WARS</span>{" "}
-              <span className="grad-heat">INDIA</span>
+              <span className="neon-pink">RACE</span>{" "}
+              <span className="grad-heat">DAY</span>
             </h2>
           </Reveal>
           <Reveal delay={0.1}>
@@ -86,10 +86,10 @@ export default function RaceWars() {
               </span>
               <div>
                 <div className="font-body uppercase tracking-[0.2em] text-xs text-cyan">Campaign Status</div>
-                <div className="font-racing text-3xl text-white">On The Boards · 2024 Season</div>
+                <div className="font-racing text-3xl text-white">3 Trophies · 2026 Season 1</div>
               </div>
             </div>
-            <a href="#contact" className="btn-ghost">Full Results Pack</a>
+            <a href="#results" className="btn-ghost">See the Timing Sheets</a>
           </div>
         </Reveal>
       </div>

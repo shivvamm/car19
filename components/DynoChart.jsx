@@ -6,7 +6,7 @@ import { dyno } from "@/lib/data";
 const W = 620;
 const H = 340;
 const PAD = { l: 46, r: 20, t: 24, b: 40 };
-const RPM_MIN = 2;
+const RPM_MIN = 1;
 const RPM_MAX = 7;
 const VAL_MAX = 400;
 
@@ -38,7 +38,7 @@ function Curve({ points, color, dash, delay }) {
 }
 
 export default function DynoChart() {
-  const rpmTicks = [2, 3, 4, 5, 6, 7];
+  const rpmTicks = [1, 2, 3, 4, 5, 6, 7];
   const valTicks = [0, 100, 200, 300, 400];
 
   return (
@@ -51,8 +51,8 @@ export default function DynoChart() {
           <div className="font-display text-2xl text-white">{dyno.vehicle}</div>
         </div>
         <div className="text-right font-body">
-          <div className="text-magenta font-bold text-xs uppercase tracking-widest">ATM Performance</div>
-          <div className="text-white/40 text-xs">Stage 1 Tune</div>
+          <div className="text-magenta font-bold text-xs uppercase tracking-widest">Self-Built</div>
+          <div className="text-white/40 text-xs">Stage 2 Tune</div>
         </div>
       </div>
 
@@ -78,29 +78,32 @@ export default function DynoChart() {
         {/* stock (muted) */}
         <Curve points={dyno.powerStock} color="#5b6b8c" dash delay={0.1} />
         <Curve points={dyno.torqueStock} color="#3f4a63" dash delay={0.2} />
-        {/* stage 1 (hot) */}
+        {/* stage 2 (hot) */}
         <Curve points={dyno.torqueStage} color="#ffc23c" delay={0.4} />
         <Curve points={dyno.powerStage} color="#ff1e6b" delay={0.6} />
 
         {/* peak markers */}
         <g>
-          <circle cx={x(6)} cy={y(320)} r="4" fill="#ff1e6b" style={{ filter: "drop-shadow(0 0 6px #ff1e6b)" }} />
-          <text x={x(6) + 8} y={y(320) - 6} fontSize="13" fontWeight="800" fill="#ff2d8f" fontFamily="var(--font-display)">
-            320
+          <circle cx={x(dyno.powerPeak.rpm)} cy={y(dyno.powerPeak.val)} r="4" fill="#ff1e6b" style={{ filter: "drop-shadow(0 0 6px #ff1e6b)" }} />
+          <text x={x(dyno.powerPeak.rpm) + 8} y={y(dyno.powerPeak.val) - 6} fontSize="13" fontWeight="800" fill="#ff2d8f" fontFamily="var(--font-display)">
+            {dyno.powerPeak.val}
           </text>
-          <circle cx={x(2.9)} cy={y(370)} r="4" fill="#ffc23c" style={{ filter: "drop-shadow(0 0 6px #ffc23c)" }} />
-          <text x={x(2.9) + 8} y={y(370) - 6} fontSize="13" fontWeight="800" fill="#ffc23c" fontFamily="var(--font-display)">
-            370
+          <circle cx={x(dyno.torquePeak.rpm)} cy={y(dyno.torquePeak.val)} r="4" fill="#ffc23c" style={{ filter: "drop-shadow(0 0 6px #ffc23c)" }} />
+          <text x={x(dyno.torquePeak.rpm) + 8} y={y(dyno.torquePeak.val) - 6} fontSize="13" fontWeight="800" fill="#ffc23c" fontFamily="var(--font-display)">
+            ~{dyno.torquePeak.val}
           </text>
         </g>
       </svg>
 
       {/* legend */}
       <div className="flex flex-wrap gap-x-6 gap-y-2 mt-2 font-body text-xs">
-        <Legend color="#ff1e6b" label="Stage 1 — Power (BHP)" />
-        <Legend color="#ffc23c" label="Stage 1 — Torque (lb-ft)" />
-        <Legend color="#5b6b8c" label="Stock" dash />
+        <Legend color="#ff1e6b" label="Stage 2 — Power (BHP)" />
+        <Legend color="#ffc23c" label={`Stage 2 — Torque (${dyno.units}, est.)`} />
+        <Legend color="#5b6b8c" label="Stock — 158 bhp / 250 Nm" dash />
       </div>
+      <p className="mt-2 font-body text-[10px] text-white/30">
+        Power figures confirmed (158 → 260 bhp). Torque curve estimated — measured Stage-2 torque pending a dyno sheet.
+      </p>
     </div>
   );
 }

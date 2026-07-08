@@ -5,7 +5,7 @@ import Reveal from "./ui/Reveal";
 import Icon from "./ui/Icon";
 import { driver } from "@/lib/data";
 
-const socialIcon = { Instagram: "instagram", YouTube: "youtube", Email: "mail" };
+const socialIcon = { Instagram: "instagram", YouTube: "youtube", LinkedIn: "star", Email: "mail", Phone: "pin" };
 
 export default function Footer() {
   return (
@@ -30,8 +30,8 @@ export default function Footer() {
           </Reveal>
           <Reveal delay={0.15}>
             <p className="mt-6 font-body text-white/60 text-lg max-w-xl mx-auto">
-              Sponsorships, media, track days, or just want to talk boost —
-              the #19 inbox is open.
+              Sponsorship, media, co-drives or a build collab — the #19 inbox is open.
+              Season 2 kicks off with BND Motorsport on 20 Sep 2026.
             </p>
           </Reveal>
 

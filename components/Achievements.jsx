@@ -11,7 +11,7 @@ export default function Achievements() {
       <div className="max-w-[1400px] mx-auto px-5 md:px-10">
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-12">
           <div>
-            <SectionLabel n="02">Career</SectionLabel>
+            <SectionLabel n="03">Career</SectionLabel>
             <Reveal>
               <h2 className="font-display text-6xl md:text-8xl leading-[0.85] uppercase">
                 By The <span className="neon-pink">Numbers</span>
@@ -20,7 +20,7 @@ export default function Achievements() {
           </div>
           <Reveal delay={0.1}>
             <p className="font-body text-white/55 max-w-xs md:text-right">
-              Grassroots campaign record — logged across Buddh International Circuit and Race Wars India.
+              A self-funded, self-built campaign — logged across FMSCI autocross rounds and the Buddh International Circuit.
             </p>
           </Reveal>
         </div>

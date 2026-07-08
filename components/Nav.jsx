@@ -42,7 +42,7 @@ export default function Nav() {
         </nav>
 
         <a href="#contact" className="hidden sm:inline-flex btn-heat !py-2.5 !px-5 text-xs">
-          Book the Grid
+          Get in Touch
         </a>
       </div>
     </motion.header>

@@ -10,9 +10,9 @@ const titillium = Titillium_Web({
 });
 
 export const metadata = {
-  title: "SPUNKY #19 — Driver Portfolio",
+  title: "SPUNKY #19 — Aditya Singh · Racing Driver",
   description:
-    "SPUNKY — #19 time-attack driver. Black Škoda Superb 1.8 TSI, ATM Stage 1, 320 BHP. Raced at Race Wars India, Buddh International Circuit.",
+    "Aditya “SPUNKY” Singh, #19 — FMSCI autocross & circuit time-trial driver. Self-built Stage-2 Škoda Superb (158→260 bhp). 3 trophies in 2026 incl. P1 at STRADA BYOC and a podium at the Buddh International Circuit.",
 };
 
 export default function RootLayout({ children }) {

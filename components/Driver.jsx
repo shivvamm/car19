@@ -22,6 +22,11 @@ export default function Driver() {
               <span className="grad-heat">SPUNKY</span>
             </h2>
           </Reveal>
+          <Reveal delay={0.05}>
+            <p className="mt-2 font-display text-2xl md:text-3xl text-white/85 uppercase tracking-wide">
+              {driver.legalName}
+            </p>
+          </Reveal>
           <Reveal delay={0.1}>
             <p className="mt-3 font-body text-cyan uppercase tracking-[0.2em] text-sm font-semibold">
               {driver.tagline}
@@ -40,8 +45,9 @@ export default function Driver() {
             <div className="mt-10 flex flex-wrap gap-x-10 gap-y-4">
               {[
                 ["Based", driver.location],
-                ["Number", "#19 · S19"],
-                ["Machine", "Škoda Superb 1.8 TSI"],
+                ["Number", "#19 · SPUNKY"],
+                ["Discipline", "Autocross · Time-Trial"],
+                ["Machine", "Škoda Superb · Stage 2"],
               ].map(([k, v]) => (
                 <div key={k}>
                   <div className="font-body uppercase tracking-[0.2em] text-[11px] text-white/40">{k}</div>

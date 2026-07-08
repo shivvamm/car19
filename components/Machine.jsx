@@ -12,7 +12,7 @@ export default function Machine() {
       <div className="max-w-[1400px] mx-auto px-5 md:px-10">
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-14">
           <div>
-            <SectionLabel n="03">The Machine</SectionLabel>
+            <SectionLabel n="04">The Machine</SectionLabel>
             <Reveal>
               <h2 className="font-racing text-6xl md:text-8xl leading-[0.85]">
                 <span className="stroke-text">THE</span> <span className="grad-heat">SUPERB</span>
@@ -20,14 +20,14 @@ export default function Machine() {
             </Reveal>
             <Reveal delay={0.1}>
               <p className="mt-3 font-body text-white/60 text-lg max-w-md">
-                {car.year} {car.name} — reborn as a Stage 1 time-attack weapon.
+                {car.name} — self-built from a rough used buy into a 260 bhp {car.tag}.
               </p>
             </Reveal>
           </div>
           <Reveal delay={0.15}>
             <div className="flex gap-8">
-              <BigStat v="320" u="BHP" />
-              <BigStat v="370" u="LB-FT" accent />
+              <BigStat v="260" u="BHP" />
+              <BigStat v="+102" u="BHP GAIN" accent />
             </div>
           </Reveal>
         </div>

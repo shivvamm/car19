@@ -4,13 +4,15 @@ import Image from "next/image";
 import { useRef } from "react";
 import { motion, useMotionValue, useSpring, useTransform } from "framer-motion";
 import Icon from "./ui/Icon";
-import { driver, playerCard as pc } from "@/lib/data";
+import { driver, playerCard as pc, credential as cr } from "@/lib/data";
 
 const idRows = [
-  ["Class", pc.rank.replace("-CLASS", "").replace("CLASS", "").trim() || "S"],
-  ["No.", `#${driver.number}`],
-  ["Base", driver.location],
-  ["Licence", "FMSCI"],
+  ["Class", pc.rank],
+  ["No.", `#${cr.number}`],
+  ["D.O.B", cr.dob],
+  ["Blood", cr.blood],
+  ["Jersey", cr.jersey],
+  ["Base", cr.base],
 ];
 
 export default function PlayerCard() {
@@ -77,7 +79,8 @@ export default function PlayerCard() {
             <div className="min-w-0">
               <div className="font-body uppercase tracking-[0.22em] text-[9px] text-white/40">Driver</div>
               <div className="font-display text-4xl text-white leading-none uppercase">{driver.handle}</div>
-              <div className="font-body text-cyan text-[11px] uppercase tracking-[0.14em] mt-1">Time-Attack Driver</div>
+              <div className="font-body text-white/70 text-[12px] leading-none mt-1">{cr.name}</div>
+              <div className="font-body text-cyan text-[10px] uppercase tracking-[0.14em] mt-1">Autocross · Time-Trial</div>
 
               <dl className="mt-3">
                 {idRows.map(([k, v]) => (
@@ -101,10 +104,17 @@ export default function PlayerCard() {
           </div>
 
           {/* credential footer + barcode */}
-          <div className="relative z-20 flex items-center justify-between px-5 py-3 border-t border-white/10 bg-ink/60" style={{ transform: "translateZ(15px)" }}>
-            <span className="font-body uppercase tracking-[0.18em] text-[9px] text-white/45">LIC · FMSCI-2024-{driver.number}</span>
+          <div className="relative z-20 flex items-end justify-between px-5 py-3 border-t border-white/10 bg-ink/60 gap-3" style={{ transform: "translateZ(15px)" }}>
+            <div className="min-w-0 space-y-1">
+              <div className="flex items-center gap-2">
+                <span className="font-body uppercase tracking-[0.14em] text-[8px] text-white/35">Medical</span>
+                <span className="font-body font-bold text-[9px] text-cyan uppercase tracking-[0.14em]">{cr.medical}</span>
+              </div>
+              <div className="font-body uppercase tracking-[0.12em] text-[8px] text-white/45 truncate">DL · {cr.dlNo}</div>
+              <div className="font-body uppercase tracking-[0.12em] text-[8px] text-white/45 truncate">INS · {cr.insurer} · {cr.insNo}</div>
+            </div>
             <span
-              className="h-6 w-24"
+              className="h-6 w-20 flex-shrink-0"
               aria-hidden
               style={{
                 background:
