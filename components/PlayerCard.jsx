@@ -61,7 +61,6 @@ export default function PlayerCard() {
           <div className="relative z-20 flex items-center justify-between h-11 px-5 bg-magenta" style={{ transform: "translateZ(45px)" }}>
             <div className="flex items-center gap-2">
               <Icon name="flag" className="w-4 h-4 text-white" strokeWidth={1.8} />
-              <span className="font-body font-bold uppercase tracking-[0.2em] text-[11px] text-white">SPUNKY Racing</span>
             </div>
             <span className="font-body uppercase tracking-[0.24em] text-[9px] text-white/80">Competition Licence</span>
           </div>

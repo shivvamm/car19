@@ -71,9 +71,9 @@ export default function Hero() {
           className="font-display leading-[0.82] text-[18vw] md:text-[13vw] lg:text-[11rem]"
         >
           <span className="block text-white">SPUNKY</span>
-          <span className="block text-[0.62em]">
-            <span className="stroke-text">TIME </span>
-            <span className="neon-pink">ATTACK</span>
+          <span className="block text-[0.4em] tracking-tight">
+            <span className="stroke-text">MOTORSPORT </span>
+            <span className="neon-pink">ATHLETE</span>
           </span>
         </motion.h1>
 
